@@ -26,9 +26,11 @@
                 <category android:name="android.intent.category.DEFAULT"></category>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.WelcomeActivity"></activity>
-        <activity android:name=".activity.LessonListActivity"></activity>
-        <activity android:name=".activity.MusicActivity"></activity>
+        <activity android:name=".activity.WelcomeActivity" android:launchMode="singleTop"></activity>
+        <activity android:name=".activity.LessonListActivity" android:launchMode="singleTop"></activity>
+        <activity android:name=".activity.MusicActivity" android:launchMode="singleTop"></activity>
+        <activity android:name=".activity.PersonListViewActivity" android:launchMode="singleTop"></activity>
+        <activity android:name=".activity.HeadPicActivity" android:launchMode="singleTop"></activity>
     </application>
 
 </manifest>

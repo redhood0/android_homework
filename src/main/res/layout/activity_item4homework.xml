@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="#DAD7AC"
+    >
+    <TextView
+        android:id="@+id/tv_name"
+        android:text="姓名：赵乾"
+        android:textSize="25sp"
+        android:background="#F78A8A"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_place"
+        android:text="住址：南通"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_career"
+        android:text="专业：移动应以开发"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_class"
+        android:text="班级：移动1811"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

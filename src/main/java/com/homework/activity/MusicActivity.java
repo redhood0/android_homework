@@ -47,6 +47,18 @@ public class MusicActivity extends AppCompatActivity {
         map2.put("author","Dean Brody1111");
         map2.put("pic",R.drawable.music_icon);
         list.add(map2);
+        HashMap<String,Object> map3 = new HashMap<>();
+        map3.put("num",i++);
+        map3.put("title","Lazy sad");
+        map3.put("author","Dean adas");
+        map3.put("pic",R.drawable.music_icon);
+        list.add(map3);
+        HashMap<String,Object> map4 = new HashMap<>();
+        map4.put("num",i++);
+        map4.put("title","DDDDEAD");
+        map4.put("author","FFFRRR");
+        map4.put("pic",R.drawable.music_icon);
+        list.add(map4);
         return list;
     }
 }

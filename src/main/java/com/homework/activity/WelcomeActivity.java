@@ -3,6 +3,7 @@ package com.homework.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,15 +40,18 @@ public class WelcomeActivity extends AppCompatActivity {
 
         tv_welcome_word = findViewById(R.id.tv_welcome_word);
         String username = getIntent().getStringExtra("username");
-        tv_welcome_word.setText(username+" 同学\n,欢迎来到南工院!");
+        tv_welcome_word.setText(username+" 同学,欢迎来到南工院!");
 
+        setLintener();
+    }
+
+    public void setLintener(){
         btn_calculator = findViewById(R.id.btn_calculator);
         btn_news = findViewById(R.id.btn_news);
         btn_msg = findViewById(R.id.btn_msg);
         btn_person = findViewById(R.id.btn_person);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-
         btn_calculator.setOnClickListener(n -> {
             FragmentTransaction transaction = fragmentManager.beginTransaction();
             if(caculatorFragment == null){
@@ -88,7 +92,16 @@ public class WelcomeActivity extends AppCompatActivity {
             transaction.replace(R.id.frame4change,personFragment);
             transaction.commit();
         });
-
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        //super.onActivityResult(requestCode, resultCode, data);
+        switch (resultCode){
+            case HeadPicActivity.TO_WELCOME_PAGE_CODE :
+                personFragment.callBack(data.getIntExtra("data",0));
+                break;
+
+        }
+    }
 }
