@@ -22,7 +22,7 @@ public class PersonFragment extends Fragment {
     public static PersonFragment pf;
 
     private TextView tv_name;
-    private ImageView iv_headicon;
+    private ImageView iv_pic;
 
 
     @Nullable
@@ -37,7 +37,7 @@ public class PersonFragment extends Fragment {
 
     public void init(View v){
         tv_name = v.findViewById(R.id.tv_name);
-        iv_headicon = v.findViewById(R.id.iv_pic);
+        iv_pic = v.findViewById(R.id.iv_pic);
         //接收部分(在fragment里面接收）
 //        Bundle bundle = getActivity().getIntent().getExtras();
 //        if(bundle != null){
@@ -51,14 +51,14 @@ public class PersonFragment extends Fragment {
 //            }
 //        }
         tv_name.setOnClickListener(n ->  startActivity(new Intent(getActivity(), PersonListViewActivity.class)));
-        iv_headicon.setOnClickListener(n -> startActivityForResult(new Intent(getActivity(), HeadPicActivity.class),HeadPicActivity.TO_WELCOME_PAGE_CODE));
+        iv_pic.setOnClickListener(n -> startActivityForResult(new Intent(getActivity(), HeadPicActivity.class),HeadPicActivity.TO_WELCOME_PAGE_CODE));
     }
 
     public void callBack(int iconId) {
         if(iconId == 0){
-            iv_headicon.setImageResource(R.drawable.zq1);
+            iv_pic.setImageResource(R.drawable.zq1);
         }else{
-            iv_headicon.setImageResource(iconId);
+            iv_pic.setImageResource(iconId);
         }
     }
 }

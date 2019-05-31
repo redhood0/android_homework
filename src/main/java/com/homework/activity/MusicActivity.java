@@ -1,6 +1,9 @@
 package com.homework.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -16,6 +19,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MusicActivity extends AppCompatActivity {
+    String[] songTitles = {"Various Artists","Lazy Days","Humous","Season"};
     ListView lv_musiclist;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,6 +34,12 @@ public class MusicActivity extends AppCompatActivity {
         int[] ids = new int[]{R.id.tv_num,R.id.tv_title,R.id.tv_author,R.id.iv_pic};
         SimpleAdapter simpleAdapter = new SimpleAdapter(this,getDatas() ,R.layout.listitem_music,strs,ids);
         lv_musiclist.setAdapter(simpleAdapter);
+
+        lv_musiclist.setOnItemClickListener((parent,view,position,id) -> {
+            Intent intent = new Intent(MusicActivity.this,MusicPlayActivity.class);
+            intent.putExtra("title",songTitles[position]);
+            startActivity(intent);
+        });
     }
 
     private ArrayList<HashMap<String,Object>> getDatas(){
@@ -37,25 +47,25 @@ public class MusicActivity extends AppCompatActivity {
         int i = 1;
         HashMap<String,Object> map1 = new HashMap<>();
         map1.put("num",i++);
-        map1.put("title","Lazy Days");
+        map1.put("title","Various Artists");
         map1.put("author","Dean Brody");
         map1.put("pic",R.drawable.music_icon);
         list.add(map1);
         HashMap<String,Object> map2 = new HashMap<>();
         map2.put("num",i++);
-        map2.put("title","Lazy Days1111");
+        map2.put("title","Lazy Days");
         map2.put("author","Dean Brody1111");
         map2.put("pic",R.drawable.music_icon);
         list.add(map2);
         HashMap<String,Object> map3 = new HashMap<>();
         map3.put("num",i++);
-        map3.put("title","Lazy sad");
+        map3.put("title","Humous");
         map3.put("author","Dean adas");
         map3.put("pic",R.drawable.music_icon);
         list.add(map3);
         HashMap<String,Object> map4 = new HashMap<>();
         map4.put("num",i++);
-        map4.put("title","DDDDEAD");
+        map4.put("title","Season");
         map4.put("author","FFFRRR");
         map4.put("pic",R.drawable.music_icon);
         list.add(map4);

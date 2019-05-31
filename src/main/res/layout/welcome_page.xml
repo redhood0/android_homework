@@ -43,7 +43,7 @@
             android:id="@+id/btn_news"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="新闻" />
+            android:text="工具" />
 
         <Button
             android:id="@+id/btn_msg"
